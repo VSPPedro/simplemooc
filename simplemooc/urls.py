@@ -16,10 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from core import urls as core_urls
-from core import views as core_views
+from simplemooc.core import urls as core_urls
+from simplemooc.core import views as core_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('core.urls', namespace='core')),
+    url(r'^', include('simplemooc.core.urls', namespace='core')),
 ]
