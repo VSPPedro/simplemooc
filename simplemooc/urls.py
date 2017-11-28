@@ -20,6 +20,7 @@ from simplemooc.core import urls as core_urls
 from simplemooc.core import views as core_views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^', include('simplemooc.core.urls', namespace='core')),
+    url(r'^cursos/', include('simplemooc.courses.urls', namespace='courses')),
+    url(r'^admin/', admin.site.urls),
 ]
