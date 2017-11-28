@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.urls import reverse
 from django.db import models
 
 class CourseManager(models.Manager):
@@ -28,7 +29,10 @@ class Course(models.Model):
     
     def __str__(self):
         return self.name
-        
+    
+    def get_absolute_url(self):
+        return reverse('courses:details', args=[str(self.slug)])
+    
     class Meta:
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
